@@ -140,14 +140,15 @@ class BundleFrontendCommand(setuptools.command.build_py.build_py):
 setuptools.setup(
     name='beancount-import',
     # Use setuptools_scm to determine version from git tags
-    use_scm_version={
-        # It would be nice to include the commit hash in the version, but that
-        # can't be done in a PEP 440-compatible way.
-        'version_scheme': 'no-guess-dev',
-        # Test PyPI does not support local versions.
-        'local_scheme': 'no-local-version',
-        'fallback_version': '0.0.0',
-    },
+    # use_scm_version={
+    #     # It would be nice to include the commit hash in the version, but that
+    #     # can't be done in a PEP 440-compatible way.
+    #     'version_scheme': 'no-guess-dev',
+    #     # Test PyPI does not support local versions.
+    #     'local_scheme': 'no-local-version',
+    #     'fallback_version': '0.0.0',
+    # },
+    version='9.9.9',
     description='Semi-automatic importing of external data into beancount.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -163,7 +164,7 @@ setuptools.setup(
         'beancount_import': ['frontend_dist/*'],
     },
     python_requires='>=3.8',
-    setup_requires=['setuptools_scm>=5.0.2'],
+    # setup_requires=['setuptools_scm>=5.0.2'],
     install_requires=[
         'beancount>=2.1.3',
         'tornado',
